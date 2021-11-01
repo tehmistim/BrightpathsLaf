@@ -1,0 +1,181 @@
+* {
+    background-color: black;
+    color: white;
+}
+
+/* a:visited {
+	color: crimson;
+} */
+
+.header-img {
+	width: 100%;
+	height: 200px;
+	background: url('images/profileHeader.jpg');
+	background-size: contain;
+}
+
+.diveheader-img {
+	width: 100%;
+	height: 200px;
+	background: url('images/diveheader.png');
+	background-size: cover;
+}
+
+/* TOP NAV MENU */
+
+.topnav {
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-style: italic;
+}
+
+.topnav a.active {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(251, 255, 0);
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* LEFT COLUMN */
+
+.leftcol {
+    position: inherit;
+    width:250px;
+    height:100vh;    
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    padding: 10px;
+    float:left;
+    color: white;
+}
+
+/* PHOTOS NEXT TO LEFT COLUMN */
+
+.row {
+    display: flex;
+}
+  
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* IMAGE HOVER */
+.container {
+    position: relative;
+    width: 50%;
+}
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #3d3d3dd0;
+  }
+  
+  .container:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    font-size: 1.2em;
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center !important;
+}
+
+#color {
+    background-color: #ffee00;
+    border: none;
+    color: rgb(255, 0, 162);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#place {
+    background-color: #ffee00;
+    border: none;
+    color: rgb(255, 0, 162);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#ritual {
+    background-color: #ffee00;
+    border: none;
+    color: rgb(255, 0, 162);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+
+#divebutton {
+    background-color: #ff00777c;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+}
+
+#divebutton:hover {
+  background-color: rgb(255, 0, 162);
+} 
