@@ -23,7 +23,7 @@ app.get('/api/inventory/:index', (req, res) => {
 });
 
 
-
+ 
 
 const SERVER_PORT = 5050                            // USUAL SETUP FOR THE BOTTOM
 app.listen(SERVER_PORT, () => console.log(`Server running on ${SERVER_PORT}`));    //  USUAL SETUP FOR THE BOTTOM
