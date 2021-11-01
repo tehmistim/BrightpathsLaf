@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Clone</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="flex-r-sb">
+
+        <div class="flex-r-sb header-left">
+
+            <img src="images/github.png" alt="github logo" class="gh-logo">
+
+            <input
+                placeholder="Search or jump to..."
+                type="text"
+                class="search-input"
+            >
+
+            <nav class="flex-r-sb main-nav">
+                <a>Pull requests</a>
+                <a>Issues</a>
+                <a>Marketplace</a>
+                <a>Explore</a>
+            </nav>
+
+        </div>
+
+        <div class="flex-r-sb header-right">
+            <img src="images/bell.png" alt="bell notification icon" class="header-bell">
+            <div>+ <span class="down-arrow">&dtrif;</span></div>
+            <div class="flex-r-sb">
+                <img src="images/headshot.jpeg" alt="profile icon" class="header-prof circle">
+                <span class="down-arrow">&dtrif;</span>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="repo-nav-container">
+            <nav class="repo-nav">
+                <ul class="flex-r-sb repo-nav-list">
+                    <li class="underline"><a>Overview</a></li>
+                    <li><a>Repositories</a></li>
+                    <li><a>Projects</a></li>
+                    <li><a>Packages</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="flex-r-sb prof-repo-container">
+            <aside class="prof-container">
+
+                <img src="images/headshot.jpeg" alt="main profile picture" class="main-prof circle">
+
+                <div>
+                    <h1>Jane Doe</h1>
+                    <h2>jane_codes</h2>
+                </div>
+
+                <h3>Full-stack Web Developer | JavaScript | React | Node | PostgreSQL | Massive | Redux</h3>
+
+                <button>Edit Profile</button>
+
+                <p>
+                    <span><strong>6</strong> followers &middot;</span>
+                    <span><strong>5</strong> following &middot;</span>
+                    <span>&starf; 4</span>
+                </p>
+
+                <div>
+                    <p>Lehi, UT</p>
+                    <p>jane_codes@gmail.com</p>
+                </div>
+            </aside>
+
+
+            <section class="repo-container">
+
+                <div class="flex-r-sb repo-container-heading">
+                    <h3>Popular repositories</h3>
+                    <p>Customize your pins</p>
+                </div>
+
+                <section class="flex-r-sb repos">
+
+                    <div class="repo-card">
+                        <div class="flex-r-sb">
+                            <p class="title">github-intro</p>
+                            <p class="public">Public</p>
+                        </div>
+                        <div class="repo-card-lang flex-r-sb">
+                            <div class="circle lang redorange"></div>
+                            <span>HTML</span>
+                        </div>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="flex-r-sb">
+                            <p class="title">project1-day1</p>
+                            <p class="public">Public</p>
+                        </div>
+                        <div class="repo-card-lang flex-r-sb">
+                            <div class="circle lang redorange"></div>
+                            <span>HTML</span>
+                        </div>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="flex-r-sb">
+                            <div class="title-with-fork">
+                                <p class="title">learn-git</p>
+                                <p>Forked from DevMountain/learn-git</p>
+                            </div>
+                            <p class="public">Public</p>
+                        </div>
+                        <div>
+                            <p>Just a basic repository for learning git.</p>
+                        </div>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="flex-r-sb">
+                            <p class="title">monday-repo</p>
+                            <p class="public">Public</p>
+                        </div>
+                        <div class="repo-card-lang flex-r-sb">
+                            <div class="circle lang yellow"></div>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="flex-r-sb">
+                            <div class="title-with-fork">
+                                <p class="title">javascript-1-afternoon</p>
+                                <p>Forked from DevMountain/javascript-1-afternoon</p>
+                            </div>
+                            <p class="public">Public</p>
+                        </div>
+                        <div>
+                            <p>An afternoon project to help students solidify the fundamentals.</p>
+                        </div>
+                        <div class="repo-card-lang flex-r-sb">
+                            <div class="circle lang yellow"></div>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="repo-card">
+                        <div class="flex-r-sb">
+                            <div class="title-with-fork">
+                                <p class="title">javascript-2-afternoon</p>
+                                <p>Forked from DevMountain/javascript-2-afternoon</p>
+                            </div>
+                            <p class="public">Public</p>
+                        </div>
+                        <div>
+                            <p>An afternoon project to help students solidify Objects.</p>
+                        </div>
+                        <div class="repo-card-lang flex-r-sb">
+                            <div class="circle lang yellow"></div>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
