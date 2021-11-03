@@ -1,0 +1,231 @@
+/*
+    NOTE: There are lots of exact pixel sizes in here.
+    They work on my computer, you might need to tweak
+    depending on screen size.
+*/
+
+/*
+    charcoal background: #2D333B
+    black background: #22272E
+    outlines: #444C56
+    off white text: #CDD9E5
+    light gray text: #ACB9C6
+    orange underline: #EC775C
+    blue repo name: #539BF5
+    yellow JavaScript circle: #F1E05A
+    redorange HTML circle: #E34C26
+*/
+
+/*GLOBAL*/
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI',Helvetica,Arial,sans-serif;
+}
+
+body {
+    background-color: #22272E;
+    font-family: 'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+.flex-r-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    color: #ACB9C6;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+/*HEADER*/
+header {
+    height: 65px;
+    background-color: #2D333B;
+    color: #CDD9E5;
+    padding: 0 30px;
+}
+
+.header-left {
+    width: 675px;
+}
+
+.gh-logo {
+    width: 35px;
+}
+
+.search-input {
+    width: 250px;
+    background-color: #22272E;
+    color: #CDD9E5;
+    border: 1px solid #444C56;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+::placeholder {
+    color: #CDD9E5;
+    opacity: 1;
+}
+
+.main-nav {
+    width: 350px;
+    font-weight: bold;
+}
+
+.header-right {
+    width: 110px;
+    font-size: 20px;
+}
+
+.header-bell {
+    height: 16px;
+}
+
+.header-prof {
+    height: 22px;
+    margin-right: 3px;
+}
+
+.down-arrow {
+    font-size: 14px;
+}
+
+/*MAIN*/
+main {
+    color: #ACB9C6;
+}
+
+/*REPO NAV*/
+.repo-nav-container {
+    border-bottom: 1px solid #444C56;
+}
+
+.repo-nav {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.repo-nav-list {
+    width: 550px;
+    height: 75px;
+    align-items: flex-end;
+    margin-left: 300px;
+}
+
+.repo-nav-list li {
+    padding: 0 20px;
+    padding-bottom: 15px;
+}
+
+.underline {
+    border-bottom: 3px solid #EC775C;
+}
+
+/*CONTAINER*/
+.prof-repo-container {
+    width: 1300px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/*LEFT PROFILE*/
+.prof-container {
+    margin-top: 45px;
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    position: relative;
+    bottom: 75px;
+    height: 575px;
+    color: #CDD9E5;
+    line-height: 1.2;
+}
+
+.prof-container button {
+    padding: 10px 0;
+    border: 1px solid #444C56;
+    border-radius: 4px;
+    background-color: #2D333B;
+    color: #CDD9E5;
+    font-weight: bold;
+}
+
+.main-prof {
+    width: 100%;
+    border: 1px solid #444C56;
+}
+
+/*RIGHT REPOS*/
+.repo-container {
+    width: 1000px;
+    margin-left: 25px;
+    height: 500px;
+}
+
+.repo-container-heading {
+    height: 10%;
+    align-items: flex-end;
+}
+
+.repos {
+    height: 90%;
+    flex-wrap: wrap;
+}
+
+.repo-card {
+    width: 490px;
+    padding: 20px;
+    border: 1px solid #444C56;
+    border-radius: 4px;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    color: #539BF5;
+    font-weight: bold;
+}
+
+.public {
+    border: 1px solid #444C56;
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.repo-card-lang {
+    justify-content: flex-start;
+}
+
+.lang {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.redorange {
+    background-color: #E34C26;
+}
+
+.yellow {
+    background-color: #F1E05A;
+}

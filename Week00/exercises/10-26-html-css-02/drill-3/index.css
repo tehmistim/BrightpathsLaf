@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    overscroll-behavior: ;
+
+}
+
+header {
+    background-color: rgb(202, 202, 202);
+    position: inherit;
+    width: 100%;
+    object-position: top;
+    /*left: 0;
+    right: 0;*/
+    color: white;
+    height: 100px;
+    margin-top: 0px;
+} 
+
+.square {
+    position:absolute;    
+    height: 50px;
+    width: 40px;
+    background-color: rgb(75, 145, 214);
+    left: 2%;
+    top: 2.5%;  
+    padding-left: 10px;
+}
+
+.div1 {
+    padding: 30px;
+    margin-left: 30px;    
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+.blue {
+    background-color: rgb(75, 145, 214);
+    height: 200px;
+    width: 100%;
+}
+
+.green {
+    background-color: rgb(139, 250, 189);
+    height: 200px;
+    width: 100%;
+}
+
+.lime {
+    background-color: rgb(182, 252, 124);
+    height: 200px;
+    width: 100%;
+}
+
+.yellow {
+    background-color: rgb(246, 255, 66);
+    height: 200px;
+    width: 100%;
+}

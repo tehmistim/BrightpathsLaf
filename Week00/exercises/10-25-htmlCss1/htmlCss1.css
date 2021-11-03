@@ -1,0 +1,190 @@
+* {
+    background-color: rgb(0, 0, 0);
+}
+
+h1 {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 230, 0);
+    padding: 25px;
+    margin: 0px;
+    align-content: center;
+    text-align: center;
+}
+
+h3 {
+    color:violet;
+    text-align: center;
+    align-content: center;
+}
+
+/*---------------------nav bar------*/
+.topnav {
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    padding: 12;
+}
+
+.topnav a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 17px;
+} 
+
+.topnav a:hover {
+  background-color: #ffee00;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffee00;
+  color: rgb(255, 0, 0);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*---------paragraph----------------------*/
+ p{
+     color: white;
+     align-content: center;
+     text-align: center;
+}
+
+/*-----------------------table----------------*/
+table,
+td {
+    border: 2px solid rgb(57, 79, 181);
+    background-color: rgb(0, 0, 0);
+    color: snow;
+
+}
+
+thead,
+tfoot {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+
+/*----------------rating buttons---------------------*/
+
+.wrapper {
+    display: inline-block;
+  }
+  .wrapper * {
+    float: right;
+  }
+  input {
+    display: none;
+  }
+  label {
+    font-size: 30px;
+  }
+  
+  input:checked ~ label {
+    color: rgb(217, 255, 0);
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: red;
+  }
+  
+  input:checked ~ label:hover,
+  input:checked ~ label:hover ~ label {
+    color: rgb(0, 195, 255) !important;
+  }
+/*-------------------------------------*/
+  .wrapper2 {
+    display: inline-block;
+  }
+  .wrapper2 * {
+    float: right;
+  }
+  input {
+    display: none;
+  }
+  label {
+    font-size: 30px;
+  }
+  
+  input:checked ~ label {
+    color: rgb(217, 255, 0);
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: rgb(255, 0, 191);
+  }
+  
+  input:checked ~ label:hover,
+  input:checked ~ label:hover ~ label {
+    color: rgb(0, 195, 255) !important;
+  }
+
+  /*-------------------------------------*/
+
+  .wrapper3 {
+    display: inline-block;
+  }
+  .wrapper3 * {
+    float: right;
+  }
+  input {
+    display: none;
+  }
+  label {
+    font-size: 30px;
+  }
+  
+  input:checked ~ label {
+    color: rgb(217, 255, 0);
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: rgb(255, 0, 191);
+  }
+  
+  input:checked ~ label:hover,
+  input:checked ~ label:hover ~ label {
+    color: rgb(0, 195, 255) !important;
+  }
+
+
+  /*-------------------------------------*/
+
+  .wrapper4 {
+    display: inline-block;
+  }
+  .wrapper4 * {
+    float: right;
+  }
+  input {
+    display: none;
+  }
+  label {
+    font-size: 30px;
+  }
+  
+  input:checked ~ label {
+    color: rgb(217, 255, 0);
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: rgb(255, 0, 191);
+  }
+  
+  input:checked ~ label:hover,
+  input:checked ~ label:hover ~ label {
+    color: rgb(0, 195, 255) !important;
+  }
+
+
+  /*-------------------------------------*/
+
+  
