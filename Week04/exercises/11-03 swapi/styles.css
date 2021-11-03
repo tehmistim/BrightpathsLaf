@@ -1,0 +1,25 @@
+* {
+    background-color: cadetblue;
+    color: cornsilk;
+    align-content: center;
+}
+
+button {
+    background-color: darkorange;
+    color: black;
+    align-content: center;
+
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    font: optional;
+    align-content: center;
+}
+
+body {
+    border: rgb(255, 255, 255);
+    border-style: solid;
+    text-align: center;
+    border-width: 1px;
+}

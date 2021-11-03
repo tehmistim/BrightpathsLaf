@@ -1,0 +1,56 @@
+--------------------------------PART ONE--------------------------------
+
+The height of Darth Vader
+    202
+
+The population of the planet Alderaan
+    2,000,000,000
+
+The name of the manufacturer of the Millennium Falcon
+    Corellian Engineering Corporation
+
+The name of the species that C-3PO belongs to (multiple URLs)
+    Droid
+
+The title of each film that Obi-Wan Kenobi is in (multiple URLs)
+    A New Hope
+    The Empire Strikes Back
+    Return of the Jedi
+    The Phantom Menace
+    Attack of the Clones
+    Revenge of the Sith
+
+Use the search query (the how to on the search query is at the bottom of the Getting Started section of the documentation) to get the information about the Millennium Falcon, it’s a starship
+
+--------------------------------PART TWO--------------------------------
+
+Check if the POST request accept params, queries, and/or a body. Which one(s) and what information is it expecting to be sent?
+    Accepts a string of objects: text and date
+
+What data type does the GET request return?
+    Returns an ID number, string text and date
+
+What would the URL look like for deleting the post with the id 555? (This post does not exist anymore, but the syntax is the same for existing posts)
+    'https://practiceapi.devmountain.com/api/posts?id=555'
+
+List the possible response codes from the GET request at /posts/filter
+    Request query is missing required text property.
+
+Create a post whose text is your name, record the URL and body here:
+    https://practiceapi.devmountain.com/api/posts/143
+
+What would the URL and body object be to update the post you just made to contain your favorite color instead of your name?
+    https://practiceapi.devmountain.com/api/posts?id=143
+
+What is the URL to get posts that contain the text “blue”?
+    https://practiceapi.devmountain.com/api/posts/filter/blue
+
+Make a request to GET all the posts. What are the content type and charset of the response? (Hint: look on the Headers)
+    application/json; charset=utf-8
+
+What would cause a PUT request to return a 409 status?
+    If it conflicts with a current ID listed
+
+What happens if you try to send a query in the GET request URL? Why do you get that response?
+    Because get is only retrieving what is listed, it cannot take in anything new or anything for that matter.
+
