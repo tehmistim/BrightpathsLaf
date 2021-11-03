@@ -1,0 +1,25 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    background-color: rgb(226, 43, 43);
+    color: khaki;
+    padding: 25px;
+    margin: 0px;
+    align-content: center;
+    text-align: center;
+}
+
+div {
+    background-image: url(E:\9zfuCW8.jpg);
+    background-repeat: repeat;    
+    color: blue;
+}
+
+p {
+    font-size: 12pt;
+    border: 2px solid tomato;
+    padding: 15px;
+    margin: 22px;
+}
