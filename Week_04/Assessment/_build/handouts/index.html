@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Module 4 Assessment | Devmountain Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/devmountain.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/devmountain.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Devmountain Foundations</p>
+            <p id="page-title">Module 4 Assessment</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Module 4 Assessment</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#explore-the-app">Explore the app</a></li>
+<li><a class="reference internal" href="#add-a-new-feature">Add a New Feature</a></li>
+<li><a class="reference internal" href="#add-3-more-features">Add 3 More Features</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="module-4-assessment">
+<h1>Module 4 Assessment</h1>
+<section class="section" id="introduction">
+<h2>Introduction</h2>
+<p>It’s time to practice and solidify the skills you learned in this module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Independent work</p>
+<div class="admonition-body docutils container">
+<p>This is an individual assignment. Please do not collaborate with your
+peers or share your work until the project is reviewed as a class.</p>
+</div>
+</div>
+</section>
+<section class="section" id="setup">
+<h2>Setup</h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ed.devmountain.com/materials/exercises/assessment-backend.zip">Click here</a> to
+download the code files you need to for this project.</p></li>
+<li><p>Navigate to the project folder on the command line and open it up in VSCode</p></li>
+<li><p>In your terminal, be sure to run these commands separately: ‘npm init -y’ to create a package.json file, &amp; ‘git init’ so that you can link your local repo to a Github repo (which you’ll need to create) for submission purposes.</p></li>
+<li><p>In the terminal at the root of the project, run “npm i express cors” to install the necessary packages for the assessment.</p></li>
+<li><p>Start the application’s server by running the following command in your terminal after you’ve navigated to the assessment’s root folder:</p></li>
+</ol>
+<pre class="console literal-block">$ <span class="cmd">node server/index.js</span></pre>
+<ol class="arabic simple" start="6">
+<li><p>Go to your web browser and click File &gt; Open in the menu.</p></li>
+<li><p>Navigate to the file <cite>client/index.html</cite> in the file explorer and open it (or, alternatively, you can open this file with the Live-Server extension, if installed).</p></li>
+<li><p>You should see a button that says “Get compliment”.</p></li>
+</ol>
+</section>
+<section class="section" id="explore-the-app">
+<h2>Explore the app</h2>
+<ul class="simple">
+<li><p>Click the button a few times to get a feel for what this tiny web app does.</p></li>
+<li><p>Read the code inside the two files <cite>client/index.html</cite> and <cite>server/index.js</cite>.
+Refer to your notes or the internet to understand how each part is working.</p></li>
+</ul>
+</section>
+<section class="section" id="add-a-new-feature">
+<h2>Add a New Feature</h2>
+<p>Using the “get compliment” feature and code as an example, create a new feature
+that allows the user to get a random fortune, similar to the kind you would
+see in a fortune cookie. There are some great ideas for fortunes <a class="reference external" href="https://joshmadison.com/2008/04/20/fortune-cookie-fortunes/" target="_blank">here</a>.
+You should include at least 5 possible fortunes.</p>
+<p>This feature needs to include JavaScript code on the front-end to handle the button click event, as well as
+JavaScript (Node) code on the back end to handle the request for a fortune and producing an
+appropriate HTTP response.</p>
+</section>
+<section class="section" id="add-3-more-features">
+<h2>Add 3 More Features</h2>
+<p>It’s time to get creative! Come up with 3 additional features you would like to add to this website.
+They can involve more buttons , input (<code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;&gt;</span></code>) fields, or dropdown fields (<code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code>).
+Allow the user to ask for things that will inspire, encourage, or help them progress towards
+their goals. The more creative, the better! You are not limited to only GET requests, you can also incorporate POST, PUT, DELETE requests if/where needed.</p>
+<p>You should use your skills/reference materials from the lessons <cite>Back-End 1</cite>, <cite>Back-End 2</cite> and the <cite>APIs</cite> lessons.</p>
+<p><strong>When done, be sure to push your code to Github for this assignment, then submit the link on Frodo!</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>To pass this assessment you must score at least 11/15.</strong></p>
+<img alt="_images/Unit4Rubric.png" src="_images/Unit4Rubric.png" style="width: 1100px;" />
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
