@@ -1,0 +1,148 @@
+#two {
+    background: lightgreen;
+    color: black;
+    display: inherit;
+    top: 0pt;
+    height: 200px;
+    /* padding: 10px; */
+    /* vertical-align: middle; */
+    line-height: 100px;
+    
+}
+
+#twoh1 {
+    color: black;
+    padding: 20px;
+}
+
+#three {
+    background: rgb(240, 166, 166);
+    top: 0pt;
+    height: 200px;
+    padding: 10px;
+}
+
+#threeh1 {
+    color: black;
+    padding: 20px;
+}
+
+#four {
+    background: rgb(121, 119, 119);
+    top: 0pt;
+    height: 200px;
+    padding: 10px;
+}
+
+#fourh1 {
+    color: black;
+    padding: 20px;
+}
+
+body {    
+    background-color: cornflowerblue;
+    align-content: center;
+    text-align: center;
+    color: sandybrown;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    height: 50px;
+    width: 100%;
+    top: 0pt;
+    left: 0pt;    
+    position: absolute;
+    border-radius: 0pt;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+
+}
+
+#complimentButton {
+    background-color: deeppink;
+    color: white;
+}
+
+#fortuneButton {
+    background-color: deeppink;
+    color: white;
+}
+
+#retrieveButton {
+    background-color: deeppink;
+    color: white;
+}
+
+#cohartButton {
+    background-color: deeppink;
+    color: white;
+}
+
+.column {
+    float: left;
+    width: 32%;
+    padding: 10px;
+    height: 200px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#fortune {
+    color:black;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+h3 {
+    color: black;
+}
+
+#getVideos {
+    background-color: deeppink;
+    color: white;
+    
+}
+
+#cohart-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cohart-cover {
+    width: 105px; 
+    height: 200px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.cohart-card {
+    background-color: blanchedalmond;
+    width: 105px;
+    margin: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.cohart-name {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.cohart-paired-with {
+    font-size: 15px;
+    margin: 5px 0;
+}
