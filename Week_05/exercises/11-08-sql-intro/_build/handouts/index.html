@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>SQL Basics | Bright Paths - Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/brightpaths.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/brightpaths.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Bright Paths - Foundations</p>
+            <p id="page-title">SQL Basics</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">SQL Basics</a><ul>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#person">Person</a></li>
+<li><a class="reference internal" href="#orders">Orders</a></li>
+<li><a class="reference internal" href="#artist">Artist</a></li>
+<li><a class="reference internal" href="#employee">Employee</a></li>
+<li><a class="reference internal" href="#invoice">Invoice</a></li>
+<li><a class="reference internal" href="#group-by">Group By</a></li>
+<li><a class="reference internal" href="#update">Update</a></li>
+<li><a class="reference internal" href="#delete">Delete</a></li>
+<li><a class="reference internal" href="#push-to-github">Push to GitHub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="sql-basics">
+<h1>SQL Basics</h1>
+<section class="section" id="instructions">
+<h2>Instructions</h2>
+<p>In this project you will be practicing inserting and querying data using SQL. You’ll make use of a handy online tool provided by Devmountain that will allow you to write SQL in your browser.</p>
+<p>Go to <a class="reference external" href="https://postgres.devmountain.com/" target="_blank">https://postgres.devmountain.com/</a></p>
+<p>On the left are the tables with their fields, the right is where you will be writing our queries, and the bottom is where you will see our results.</p>
+<p>Each section below matches a file in the folder you downloaded from Frodo. Complete that section’s problems inside that file.</p>
+<p><strong>Any new tables or records that you add into the database will be removed after you refresh the page.</strong></p>
+<section class="section" id="setup">
+<h3>Setup</h3>
+<ol class="arabic simple">
+<li><p>Download the exercise folder from Frodo</p></li>
+<li><p>Navigate to the folder in your terminal</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> inside the folder</p></li>
+<li><p>Open the folder in VS Code</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> (don’t forget the m flag and a message)</p></li>
+<li><p>Create a repo on GitHub and connect it to your local repo</p></li>
+</ol>
+</section>
+<section class="section" id="person">
+<h3>Person</h3>
+<p>In the person.sql file, write out the code for the following problems:</p>
+<ol class="arabic simple">
+<li><p>Create a table called person that records a person’s id, name, age, height (in cm , city, favorite_color. id should be an auto-incrementing id/primary key (use type: SERIAL)</p></li>
+<li><p>Add 5 different people into the person database. Remember to not include the person_id because it should auto-increment.</p></li>
+<li><p>Select all the people in the person table by height from tallest to shortest.</p></li>
+<li><p>Select all the people in the person table by height from shortest to tallest.</p></li>
+<li><p>Select all the people in the person table by age from oldest to youngest.</p></li>
+<li><p>Select all the people in the person table older than age 20.</p></li>
+<li><p>Select all the people in the person table that are exactly 18.</p></li>
+<li><p>Select all the people in the person table that are less than 20 and older than 30.</p></li>
+<li><p>Select all the people in the person table that are not 27 (use not equals).</p></li>
+<li><p>Select all the people in the person table where their favorite color is not red.</p></li>
+<li><p>Select all the people in the person table where their favorite color is not red and is not blue.</p></li>
+<li><p>Select all the people in the person table where their favorite color is orange or green.</p></li>
+<li><p>Select all the people in the person table where their favorite color is orange, green or blue (use IN).</p></li>
+<li><p>Select all the people in the person table where their favorite color is yellow or purple (use IN).</p></li>
+</ol>
+</section>
+<section class="section" id="orders">
+<h3>Orders</h3>
+<p>In the orders.sql file, write out the code for the following problems:</p>
+<ol class="arabic">
+<li><p>Create a table called orders that records: order_id, person_id, product_name, product_price, quantity.</p></li>
+<li><p>Add 5 orders to the orders table.</p>
+<blockquote>
+<div><ol class="upperalpha simple">
+<li><p>Make orders for at least two different people.</p></li>
+<li><p>person_id should be different for different people.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Select all the records from the orders table.</p></li>
+<li><p>Calculate the total number of products ordered.</p></li>
+<li><p>Calculate the total order price.</p></li>
+<li><p>Calculate the total order price by a single person_id.</p></li>
+</ol>
+</section>
+<section class="section" id="artist">
+<h3>Artist</h3>
+<p>In the artist.sql file, write out the code for the following problems:</p>
+<ol class="arabic simple">
+<li><p>Add 3 new artists to the artist table. (It already exists.)</p></li>
+<li><p>Select 10 artists in reverse alphabetical order.</p></li>
+<li><p>Select 5 artists in alphabetical order.</p></li>
+<li><p>Select all artists that start with the word ‘Black’.</p></li>
+<li><p>Select all artists that contain the word ‘Black’.</p></li>
+</ol>
+</section>
+<section class="section" id="employee">
+<h3>Employee</h3>
+<p>In the employee.sql file, write out the code for the following problems:</p>
+<ol class="arabic simple">
+<li><p>List all employee first and last names only that live in Calgary.</p></li>
+<li><p>Find the birthdate for the youngest employee.</p></li>
+<li><p>Find the birthdate for the oldest employee.</p></li>
+<li><p>Find everyone that reports to Nancy Edwards (use the ReportsTo column).</p>
+<ul class="simple">
+<li><p>You will need to query the employee table to find the id for Nancy Edwards</p></li>
+</ul>
+</li>
+<li><p>Count how many people live in Lethbridge.</p></li>
+</ol>
+</section>
+<section class="section" id="invoice">
+<h3>Invoice</h3>
+<p>In the invoice.sql file, write out the code for the following problems:</p>
+<ol class="arabic simple">
+<li><p>Count how many orders were made from the USA.</p></li>
+<li><p>Find the largest order total amount.</p></li>
+<li><p>Find the smallest order total amount.</p></li>
+<li><p>Find all orders bigger than $5.</p></li>
+<li><p>Count how many orders were smaller than $5.</p></li>
+<li><p>Count how many orders were in CA, TX, or AZ (use IN).</p></li>
+<li><p>Get the average total of the orders.</p></li>
+<li><p>Get the total sum of the orders.</p></li>
+<li><p>Update the invoice with an invoice_id of 5 to have a total order amount of 24.</p></li>
+<li><p>Delete the invoice with an invoice_id of 1.</p></li>
+</ol>
+</section>
+<section class="section" id="group-by">
+<h3>Group By</h3>
+<p>In the group_by.sql file, write out the code for the following problems:</p>
+<p>These questions reference the <code class="docutils literal notranslate"><span class="pre">invoice</span></code>, <code class="docutils literal notranslate"><span class="pre">track</span></code> and <code class="docutils literal notranslate"><span class="pre">album</span></code> tables.</p>
+<ol class="arabic simple">
+<li><p>Find the sum of totals in the invoice table grouped by <code class="docutils literal notranslate"><span class="pre">billing_state</span></code>.</p></li>
+<li><p>Find the average track length (in milliseconds) by album. Order the table by the averages.</p></li>
+<li><p>Find a count of how many albums the artists with the ids 8 and 22 have respectively. Use COUNT, WHERE/IN, and GROUP BY.</p></li>
+</ol>
+</section>
+<section class="section" id="update">
+<h3>Update</h3>
+<p>In the update.sql file, write out the code for the following problems:</p>
+<p>These questions reference both the <code class="docutils literal notranslate"><span class="pre">customer</span></code> table and <code class="docutils literal notranslate"><span class="pre">track</span></code> table.</p>
+<ol class="arabic simple">
+<li><p>Find all customers with fax numbers and set those numbers to <cite>null</cite>.</p></li>
+<li><p>Find all customers with no company (null) and set their company to <cite>“Self”</cite>.</p></li>
+<li><p>Find the customer <cite>Julia Barnett</cite> and change her last name to <cite>Thompson</cite>.</p></li>
+<li><p>Find the customer with this email <cite>luisrojas&#64;yahoo.cl</cite> and change his support rep to <cite>4</cite>.</p></li>
+<li><p>Find all tracks that are the genre <cite>Metal</cite> and have no composer. Set the composer to <cite>“The darkness around us”</cite>.</p></li>
+</ol>
+</section>
+<section class="section" id="delete">
+<h3>Delete</h3>
+<p>In the delete.sql file, write out the code for the following problems:</p>
+<div class="admonition note">
+<p class="admonition-title">Deleting is DANGEROUS!</p>
+<div class="admonition-body docutils container">
+<p>Always do a select before a delete to make sure you get back exactly what you want and only what you want to delete!</p>
+</div>
+</div>
+<p>Since we cannot delete anything from the pre-defined tables (foreign key restraints), let’s go make our own tables in SQL Tabs! (Technically, you can create tables in the Postgres Sandbox too, but let’s practice with SQL Tabs.)</p>
+<p># Open up SQL Tabs and connect to the Heroku DB you set up during the demo.</p>
+<ol class="arabic simple">
+<li><p>Create a table called animals that has 4 columns: <code class="docutils literal notranslate"><span class="pre">id</span></code> - serialized integer that’s the primary key, <code class="docutils literal notranslate"><span class="pre">name</span></code> - can be any data type that holds strings, <code class="docutils literal notranslate"><span class="pre">type</span></code> - also for strings, and <code class="docutils literal notranslate"><span class="pre">age</span></code> which will be a whole number.</p></li>
+<li><p>Next, run the commented code provided in <code class="docutils literal notranslate"><span class="pre">delete.sql</span></code> to insert some data into your table.</p></li>
+<li><p>Try selecting from <code class="docutils literal notranslate"><span class="pre">animals</span></code> to confirm that everything worked.</p></li>
+<li><p>Delete all <cite>‘lion’</cite> entries from the table.</p></li>
+<li><p>Delete all animals whose names start with “M”.</p></li>
+<li><p>Delete all entries whose age is less than 9.</p></li>
+</ol>
+</section>
+<section class="section" id="push-to-github">
+<h3>Push to GitHub</h3>
+<p>When you have completed the questions: add, commit, and push your work to GitHub.</p>
+</section>
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
