@@ -23,7 +23,7 @@
         <button id="complimentButton">GET A COMPLIMENT</button>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="server/index.js"></script>
-      <script>
+        <script>
           document.getElementById("complimentButton").onclick = function () {
             axios.get("http://localhost:4000/api/compliment/")
               .then(function (response) {
@@ -73,7 +73,7 @@
                 .then(function (response) {
                   const data = response.data;
                   console.log(data)
-                  document.querySelector('#threeh1').innerHTML = response.data
+                  document.querySelector('#answerbox').innerHTML = response.data
                   
                 });
             };
@@ -83,8 +83,8 @@
   
 
   <div class="column middle">
-    <h2>Something may appear below with a button click</h2>
-    <answerbox>test text area</answerbox>
+    <h2>something may appear below with a button click</h2>
+    <div id="answerbox">test text area</div>
     <br>
     <br>
     <br>
@@ -106,12 +106,15 @@
     <h2>Let's recall all our fellow Coharts</h2>
     <button id="cohartButton">List Coharts</button>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="server/index.js"></script>
     <script>
         document.getElementById("cohartButton").onclick = function () {
             axios.get("http://localhost:4000/api/coharts/")
                 .then(function (response) {
                     const data = response.data;
-                    alert(data);
+                    // alert(data);
+                    console.log(data)
+                    document.querySelector('#answerbox').innerHTML = response.data
                 });
         };
     </script>

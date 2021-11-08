@@ -103,7 +103,7 @@ app.get("/api/coharts", (req, res) => {
     res.status(200).send(data);
 });
 
-const {getCoharts, deleteCohart, createCohart, updateCohart} = require('./server/controller.js')
+const {getCoharts, deleteCohart, createCohart, updateCohart} = require('./controller.js')
 
 app.get(`/api/Coharts`, getCoharts)
 app.delete(`/api/Coharts/:id`, deleteCohart)

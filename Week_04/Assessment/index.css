@@ -77,19 +77,20 @@ box {
     background-color: deeppink;
     color: white;
     width: 160px;
-
 }
 
 #retrieveButton {
     background-color: deeppink;
     color: white;
     width: 160px;
-
 }
 
 #cohartButton {
     background-color: deeppink;
     color: white;
     width: 160px;
+}
 
+#answerbox {
+    color: rgb(16, 77, 189);
 }
