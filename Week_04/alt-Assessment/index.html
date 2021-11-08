@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BACK-END-TAW</title>
+
+</head>
+<body>
+    <div class="header">
+        <h1>WEEK FOUR ASSESSMENT, "THE BACK END"</h1>
+        <p>The attempt of using rest api functions</p>
+    </div>
+
+        <div class="row">
+  <div class="column left">
+    <h2>Would you like a compliment?</h2>
+    <body class="container">
+        <button id="complimentButton">GET A COMPLIMENT</button>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="server/index.js"></script>
+        <script>
+          document.getElementById("complimentButton").onclick = function () {
+            axios.get("http://localhost:4000/api/compliment/")
+              .then(function (response) {
+                const data = response.data;
+                alert(data);
+              });
+          };
+      </script>
+    
+    
+    <p>Was it to your liking?</p>
+    <input type="radio" id="yes" name="like" value="YES">
+    <label for="yes">YES</label>
+    <input type="radio" id="no" name="like" value="NO">
+    <label for="no">NO</label>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+
+    <h2>How about a fortune?</h2>
+    <body class="container">
+        <button id="fortuneButton">GET YOUR FORTUNE</button>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="server/index.js"></script>
+        <script>
+            document.getElementById("fortuneButton").onclick = function () {
+                axios.get("http://localhost:4000/api/fortune/")
+                    .then(function (response) {
+                        const data = response.data;
+                        console.log(data)
+                        // alert(fortune);
+                        document.querySelector('#twoh1').innerHTML = response.data
+                
+                    });
+            };
+        </script>
+    <br>
+    <br>
+    <h2>Recent videos Tim has watched.</h2>
+    <br>
+    <button id="retrieveButton">RETRIEVE THEM</button>
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script src="server/index.js"></script>
+          <script>
+            document.getElementById("retrieveButton").onclick = function () {
+              axios.get("http://localhost:4000/api/videos/")
+                .then(function (response) {
+                  const data = response.data;
+                  console.log(data)
+                  document.querySelector('#answerbox').innerHTML = response.data
+                  
+                });
+            };
+        </script>
+
+  </div>
+  
+
+  <div class="column middle">
+    <h2>something may appear below with a button click</h2>
+    <div id="answerbox">test text area</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <box>
+        
+    </box>
+
+    </div>
+    
+
+  <div class="column right">
+    <h2>Let's recall all our fellow Coharts</h2>
+    <button id="cohartButton">List Coharts</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="server/index.js"></script>
+    <script>
+        document.getElementById("cohartButton").onclick = function () {
+            axios.get("http://localhost:4000/api/coharts/")
+                .then(function (response) {
+                    const data = response.data;
+                    // alert(data);
+                    console.log(data)
+                    document.querySelector('#answerbox').innerHTML = response.data
+                });
+        };
+    </script>
+    <br>
+    <br>
+    <h2>OH NO!  Did we forget anyone?</h2>
+    <p>Let's get them added stat!</p>
+        <form>
+        <input 
+            type='text'
+            id="cohartName"
+            placeholder="Input Cohart Name"/>
+            <br>
+            <br>
+
+        <input 
+            type='text'
+            id="squad"
+            placeholder="Which Squad are they in?"/>
+            <br>
+            <br>
+
+        <input 
+            type='text'
+            id="img"
+            placeholder="DevMountain imageURL"/>
+            <br>
+            <br>
+
+        <section id="ratings-container">
+          <p>How many times have we been paired?</p>
+          <div>
+            <input type="range" value="5" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+            <label for="volume">  times</label>
+            <br>
+            <br>
+
+            <button id="cohartButton">add cohart</button>
+          </div>
+        </div>
+        </section>
+        
+        <div>
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script src="cohart.js"></script>
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="footer">
+    <p>can Tim make it past week five?</p>
+</div>
+</body>
+</html>

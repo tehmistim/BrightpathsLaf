@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: #c8fdfb;
+    padding: 20px;
+    text-align: center;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+  
+  /* Left and right column */
+.column.left {
+    width: 25%;
+    height: 800px;
+    background-color: rgb(233, 233, 233);
+    text-align: right;
+}
+  
+  /* Middle column */
+.column.middle {
+    width: 50%;
+    text-align: center;
+    
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column.right {
+    width: 25%;
+    height: 800px;
+    background-color: rgb(233, 233, 233);
+    text-align: left;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+      width: 100%;
+    }
+}
+
+.footer {
+    background-color: #c8fdfb;
+    text-align: center;
+    padding: 10px;
+  }
+
+box {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10px;
+    border: 5px solid rgb(254, 255, 176);
+}
+
+
+#complimentButton {
+    background-color: deeppink;
+    color: white;
+    width: 160px;
+}
+
+#fortuneButton {
+    background-color: deeppink;
+    color: white;
+    width: 160px;
+}
+
+#retrieveButton {
+    background-color: deeppink;
+    color: white;
+    width: 160px;
+}
+
+#cohartButton {
+    background-color: deeppink;
+    color: white;
+    width: 160px;
+}
+
+#answerbox {
+    color: rgb(16, 77, 189);
+}
