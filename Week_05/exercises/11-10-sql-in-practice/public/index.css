@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+h2, h3, h4, p, a {
+    margin: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: coral;
+}
+
+main {
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: darkolivegreen;
+}
+
+form > button {
+    padding: 0 10px;
+}
+
+.card {
+    border: 2px solid darkolivegreen;
+    box-shadow: 5px 5px 0 grey;
+    margin: 20px;
+    padding: 20px;
+}
+
+#user-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    margin-left: 15px;
+}
+
+#user-form > input {
+    margin-bottom: 15px;
+}
+
+#user-form > button {
+    background-color: darkolivegreen;
+    border: none;
+    color: white;
+    padding: 5px;
+}

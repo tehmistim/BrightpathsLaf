@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Sequelize Intro | Bright Paths - Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/brightpaths.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/brightpaths.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Bright Paths - Foundations</p>
+            <p id="page-title">Sequelize Intro</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Sequelize Intro</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#step-1-dotenv">Step 1: Dotenv</a></li>
+<li><a class="reference internal" href="#step-2-sequelize">Step 2: Sequelize</a></li>
+<li><a class="reference internal" href="#step-3-getting-client-information">Step 3: Getting Client Information</a></li>
+<li><a class="reference internal" href="#step-4-pending-appointments">Step 4: Pending Appointments</a></li>
+<li><a class="reference internal" href="#step-5-past-appointments">Step 5: Past Appointments</a></li>
+<li><a class="reference internal" href="#step-6-approving-appointments">Step 6: Approving Appointments</a></li>
+<li><a class="reference internal" href="#step-7-completing-appointments">Step 7: Completing Appointments</a></li>
+<li><a class="reference internal" href="#push-your-code-to-github">Push your code to GitHub!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#intermediate">Intermediate</a><ul>
+<li><a class="reference internal" href="#subqueries">Subqueries</a></li>
+<li><a class="reference internal" href="#example-subqueries">Example: Subqueries</a></li>
+<li><a class="reference internal" href="#syntax-subqueries">Syntax: Subqueries</a></li>
+<li><a class="reference internal" href="#update-using-a-subquery">Update Using a Subquery</a></li>
+<li><a class="reference internal" href="#delete-using-a-subquery">Delete Using a Subquery</a></li>
+<li><a class="reference internal" href="#problems">Problems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="sequelize-intro">
+<h1>Sequelize Intro</h1>
+<section class="section" id="summary">
+<h2>Summary</h2>
+<p>In this lab, you’ll continue using the database we set up during the demo for Clark County Construction. You’ll be writing in a new app though, this time one that’s for admin.</p>
+</section>
+<section class="section" id="setup">
+<h2>Setup</h2>
+<ol class="arabic simple">
+<li><p>Download the exercise materials from Frodo.</p></li>
+<li><p>Navigate to the folder in your terminal.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to get the project’s dependencies installed</p></li>
+<li><p>Open your code and begin!</p></li>
+</ol>
+</section>
+<section class="section" id="instructions">
+<h2>Instructions</h2>
+<section class="section" id="step-1-dotenv">
+<h3>Step 1: Dotenv</h3>
+<p>For our server files to work, we’re going to need <cite>dotenv</cite>.</p>
+<ol class="arabic simple">
+<li><p>Install ‘dotenv’ using <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">dotenv</span></code></p></li>
+<li><p>Create a file at the root of your project called <code class="docutils literal notranslate"><span class="pre">.env</span></code></p></li>
+<li><p>In that file, create a <code class="docutils literal notranslate"><span class="pre">SERVER_PORT</span></code> variable and set it to <strong>8765</strong> (it needs to be this number or you’ll have to change all the front end code)</p></li>
+<li><p>Additionally, create a <code class="docutils literal notranslate"><span class="pre">CONNECTION_STRING</span></code> variable and set it to your <cite>URI</cite> from Heroku (same as the one you used in the demo)</p></li>
+<li><p>At the top of <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, require in the <code class="docutils literal notranslate"><span class="pre">dotenv</span></code> package and call the <code class="docutils literal notranslate"><span class="pre">config</span></code> method (you can ignore the other code in there until later steps)</p></li>
+<li><p>Optional: destructure <code class="docutils literal notranslate"><span class="pre">CONNECTION_STRING</span></code> from <code class="docutils literal notranslate"><span class="pre">process.env</span></code> in <code class="docutils literal notranslate"><span class="pre">controller.js</span></code></p></li>
+</ol>
+</section>
+<section class="section" id="step-2-sequelize">
+<h3>Step 2: Sequelize</h3>
+<p>In order to make queries to our database, we’ll need Sequelize.</p>
+<ol class="arabic simple">
+<li><p>Install Sequelize and its dependencies using <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">sequelize</span> <span class="pre">pg</span> <span class="pre">pg-hstore</span></code></p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, require the <code class="docutils literal notranslate"><span class="pre">sequelize</span></code> package and save it to a variable called <cite>Sequelize</cite></p></li>
+<li><p>Initialize a new Sequelize instance, passing in your connection string and an object that looks like this:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nx">dialect</span><span class="o">:</span> <span class="s1">&#39;postgres&#39;</span><span class="p">,</span>
+  <span class="nx">dialectOptions</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">ssl</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">rejectUnauthorized</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="step-3-getting-client-information">
+<h3>Step 3: Getting Client Information</h3>
+<p>During the demo, we seeded our databases with lots of information. Now that we’re working on the admin side of things, we want a way to see all of our clients and their contact info. The front end is set up to receive an array of client info that contains data from both the <code class="docutils literal notranslate"><span class="pre">cc_users</span></code> and <code class="docutils literal notranslate"><span class="pre">cc_clients</span></code> tables, so we’ll need to use <code class="docutils literal notranslate"><span class="pre">join</span></code>.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>’s export object, write a new function called <code class="docutils literal notranslate"><span class="pre">getAllClients</span></code> (make sure it accepts <code class="docutils literal notranslate"><span class="pre">req</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">res</span></code>)</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database for all the columns in both <code class="docutils literal notranslate"><span class="pre">cc_users</span></code> and <code class="docutils literal notranslate"><span class="pre">cc_clients</span></code> joining them where the <code class="docutils literal notranslate"><span class="pre">user_id</span></code> column matches</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 20 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.get('/clients',</span> <span class="pre">getAllClients)</span></code>)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">nodemon</span></code> (make sure you’re in the right directory, also you can keep it running for the duration of the lab)</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">clients.html</span></code> (public folder) in your browser</p></li>
+<li><p>You should be seeing your client information!</p></li>
+</ol>
+</section>
+<section class="section" id="step-4-pending-appointments">
+<h3>Step 4: Pending Appointments</h3>
+<p>If you head to the home page of CCL Admin Portal, you’ll see sections for Pending, Upcoming, and Past Appointments. Pending appointments are those that have been requested but not yet approved. Let’s set up a query for those now.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, write a new function called <code class="docutils literal notranslate"><span class="pre">getPendingAppointments</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database for all appointments that are not approved (approved = false) and order them by date with the most recent dates at the top.</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 23 and 24 back in (these lines: <code class="docutils literal notranslate"><span class="pre">app.get('/pending',</span> <span class="pre">getPendingAppointments)</span></code>, and <code class="docutils literal notranslate"><span class="pre">app.get('/upcoming',</span> <span class="pre">getUpcomingAppointments)</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">home.js</span></code> (public folder), comment line 107 back in (this line: <code class="docutils literal notranslate"><span class="pre">getPendingAppointments()</span></code>)</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">home.html</span></code> in your browser</p></li>
+<li><p>You should be seeing pending appointments!</p></li>
+</ol>
+</section>
+<section class="section" id="step-5-past-appointments">
+<h3>Step 5: Past Appointments</h3>
+<p>Next, you’ll be writing a query that’s similar to the triple join query from <code class="docutils literal notranslate"><span class="pre">getUpcomingAppointments</span></code>, reference it as you write yours. This one will get all of the past appointments.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, write a new function called <code class="docutils literal notranslate"><span class="pre">getPastAppointments</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database for the following columns from their respective tables <strong>cc_appointments</strong>: appt_id, date, service_type, notes. <strong>cc_users</strong>: first_name, last_name. Reference the <code class="docutils literal notranslate"><span class="pre">getUpcomingAppointments</span></code> function to see how to join all the information together (you’ll need all the same tables again). Make sure to select only rows where both the <code class="docutils literal notranslate"><span class="pre">approved</span></code> and <code class="docutils literal notranslate"><span class="pre">completed</span></code> values are true. And order the results by date with the most recent at the top.</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 25 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.get('/appt',</span> <span class="pre">getPastAppointments)</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">home.js</span></code> (public folder), comment lines 108 and 109 back in (these lines: <code class="docutils literal notranslate"><span class="pre">getUpcomingAppointments()</span></code> and <code class="docutils literal notranslate"><span class="pre">getPastAppointments()</span></code>)</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">home.html</span></code> in your browser</p></li>
+<li><p>Now you should be able to see all the past appointments as well as the pending ones.</p></li>
+</ol>
+</section>
+<section class="section" id="step-6-approving-appointments">
+<h3>Step 6: Approving Appointments</h3>
+<p>Part of this function has been given to you because it’s taking care of auto-assigning employees to appointments for us. Finish it up with one query and the ‘Mark Approved’ buttons on the front end should work.</p>
+<ol class="arabic simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">approveAppointment</span></code> function, delete <code class="docutils literal notranslate"><span class="pre">*****YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE****</span></code> and replace it with a query that updates the appointments table. It should set <code class="docutils literal notranslate"><span class="pre">approved</span></code> to equal true where the <code class="docutils literal notranslate"><span class="pre">appt_id</span></code> matches the one coming from the <code class="docutils literal notranslate"><span class="pre">req.body</span></code>, which has been destructured for you as <code class="docutils literal notranslate"><span class="pre">apptId</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 26 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.put('/approve',</span> <span class="pre">approveAppointment)</span></code>)</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">home.html</span></code> in your browser</p></li>
+<li><p>Test out the ‘Mark Approved’ button!</p></li>
+</ol>
+<p><strong>No appointments to approve?</strong> There should be some appointments waiting for you from the demo. If there are not, start up your demo app again and request a few. Since they run on different ports, you can actually have your demo app and your lab app running at the same time.</p>
+</section>
+<section class="section" id="step-7-completing-appointments">
+<h3>Step 7: Completing Appointments</h3>
+<p>Last but not least, let’s make the ‘Mark Completed’ button work.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, write a new function called <code class="docutils literal notranslate"><span class="pre">completeAppointment</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database to update the appointments table. It should set <code class="docutils literal notranslate"><span class="pre">completed</span></code> to equal true where the <code class="docutils literal notranslate"><span class="pre">appt_id</span></code> matches the one coming from the <code class="docutils literal notranslate"><span class="pre">req.body</span></code>. (You can destructure <code class="docutils literal notranslate"><span class="pre">apptId</span></code> like in the previous step or use <code class="docutils literal notranslate"><span class="pre">req.body.apptId</span></code>.)</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 27 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.put('/complete',</span> <span class="pre">completeAppointment)</span></code>)</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">home.html</span></code> in your browser</p></li>
+<li><p>Your whole page should work now! Once pending appointments are approved, they should move to the upcoming section, and once those are complete they should move to the past section.</p></li>
+</ol>
+</section>
+<section class="section" id="push-your-code-to-github">
+<h3>Push your code to GitHub!</h3>
+</section>
+</section>
+<section class="section" id="intermediate">
+<h2>Intermediate</h2>
+<p>Read about subqueries below and then complete the given problems using the <a class="reference external" href="https://postgres.devmountain.com/" target="_blank">psotgres sandbox</a>. Save your answers in a new file called <code class="docutils literal notranslate"><span class="pre">subqueries.sql</span></code>, which you can create in the lab exercise folder you’ve been working in.</p>
+<section class="section" id="subqueries">
+<h3>Subqueries</h3>
+<p>Subqueries are a queries that rely on an outer query.</p>
+<p>A subquery is used to return data that will be used in the main query as a condition to further restrict the data to be retrieved.</p>
+</section>
+<section class="section" id="example-subqueries">
+<h3>Example: Subqueries</h3>
+<p>Let’s say we want to konw the last names of authors who have written a book that’s over 1000 pages and we have the following tables:</p>
+<blockquote>
+<div><div class="compare docutils container">
+<div class="docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>author_id</p></th>
+<th class="head"><p>author</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Hawkins</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Gold</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Williams</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Anderson</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 28%" />
+<col style="width: 22%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>book_id</p></th>
+<th class="head"><p>title</p></th>
+<th class="head"><p>pages</p></th>
+<th class="head"><p>author_id</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Big Book</p></td>
+<td><p>2300</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Book</p></td>
+<td><p>400</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tiny Book</p></td>
+<td><p>8</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>The Book</p></td>
+<td><p>1500</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></blockquote>
+</section>
+<section class="section" id="syntax-subqueries">
+<h3>Syntax: Subqueries</h3>
+<p>We could write a subquery like this:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">authors</span>
+<span class="k">WHERE</span> <span class="n">author_id</span> <span class="k">IN</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="n">author_id</span> <span class="k">FROM</span> <span class="n">books</span> <span class="k">WHERE</span> <span class="n">pages</span> <span class="o">&gt;</span> <span class="mi">1000</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>And get this result:</p>
+<blockquote>
+<div><div class="docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>author_id</p></th>
+<th class="head"><p>author</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Gold</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Williams</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+</section>
+<section class="section" id="update-using-a-subquery">
+<h3>Update Using a Subquery</h3>
+<p>What if you wanted to update the number of page’s in “Tiny Book” but didn’t know its <code class="docutils literal notranslate"><span class="pre">book_id</span></code>? Use a subquery!</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">books</span>
+<span class="k">SET</span> <span class="n">pages</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">WHERE</span> <span class="n">book_id</span> <span class="k">IN</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="n">book_id</span>
+  <span class="k">FROM</span> <span class="n">books</span>
+  <span class="k">WHERE</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Tiny Book&#39;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="delete-using-a-subquery">
+<h3>Delete Using a Subquery</h3>
+<p>We could do a similar thing to delete data.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span>
+<span class="k">FROM</span> <span class="n">books</span>
+<span class="k">WHERE</span> <span class="n">author_id</span> <span class="k">IN</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="n">author_id</span>
+  <span class="k">FROM</span> <span class="n">authors</span>
+  <span class="k">WHERE</span> <span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Williams&#39;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="problems">
+<h3>Problems</h3>
+<p>Open up the <a class="reference external" href="https://postgres.devmountain.com/" target="_blank">postgres sandbox</a> to complete these problems. Save your answers in a file <code class="docutils literal notranslate"><span class="pre">subqueries.sql</span></code>. Push to GitHub when you’re done.</p>
+<ol class="arabic simple">
+<li><p>Get all invoices where the <cite>unit_price</cite> on the <cite>invoice_line</cite> is greater than $0.99.</p></li>
+<li><p>Get all playlist tracks where the playlist name is Music.</p></li>
+<li><p>Get all track names for <cite>playlist_id</cite> 5.</p></li>
+<li><p>Get all tracks where the <cite>genre</cite> is Comedy.</p></li>
+<li><p>Get all tracks where the <cite>album</cite> is Fireball.</p></li>
+<li><p>Get all tracks for the artist Queen ( 2 nested subqueries ).</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
