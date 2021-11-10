@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Population Growth | Bright Paths - Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/brightpaths.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/brightpaths.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Bright Paths - Foundations</p>
+            <p id="page-title">Population Growth</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Population Growth</a></li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="population-growth">
+<h1>Population Growth</h1>
+<dl class="field-list simple">
+<dt class="field-odd">Difficulty</dt>
+<dd class="field-odd"><p>Medium</p>
+</dd>
+<dt class="field-even">Concepts</dt>
+<dd class="field-even"><p>Math, Loops</p>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?</p>
+<p>At the end of the first year there will be:
+1000 + 1000 * 0.02 + 50 =&gt; 1070 inhabitants</p>
+<p>At the end of the 2nd year there will be:
+1070 + 1070 * 0.02 + 50 =&gt; 1141 inhabitants (** number of inhabitants is an integer <a href="#id1"><span class="problematic" id="id2">**</span></a>)</p>
+<p>At the end of the 3rd year there will be:
+1141 + 1141 * 0.02 + 50 =&gt; 1213</p>
+<p>It will need 3 entire years.</p>
+<p>More generally given parameters:</p>
+<p>p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)</p>
+<p>the function nbYear should return n number of entire years needed to get a population greater or equal to p.</p>
+<p>aug is an integer, percent a positive or null floating number, p0 and p are positive integers (&gt; 0)</p>
+<p>Examples:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">nbYear</span><span class="p">(</span><span class="mf">1500</span><span class="p">,</span> <span class="mf">5</span><span class="p">,</span> <span class="mf">100</span><span class="p">,</span> <span class="mf">5000</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="mf">15</span>
+
+<span class="nx">nbYear</span><span class="p">(</span><span class="mf">1500000</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">10000</span><span class="p">,</span> <span class="mf">2000000</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="mf">10</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: Don’t forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.</p>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
