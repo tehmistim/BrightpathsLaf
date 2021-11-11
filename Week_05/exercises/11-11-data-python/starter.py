@@ -112,9 +112,37 @@ print(friends)
 friends.pop()
 print(friends)
 
+
+
+# //---------------//
 # import csv
 # with open("CupcakesInvoices.csv", 'r') as csvfile:
 
-open_cupcakes = open('CupcakeInvoices.csv')
-for line in open_cupcakes:
-    print(line)
+data = open('CupcakeInvoices.csv')
+
+#3
+for row in data:
+  print(row)
+
+#4
+for row in data:
+  values = row.split(',')
+  print(values[2])
+
+#5
+for row in data:
+  values = row.split(',')
+  total = int(values[3]) * float(values[4])
+  print(total)
+
+#6
+total = 0
+
+for row in data:
+  values = row.split(',')
+  total = total + (int(values[3]) * float(values[4]))
+
+print(total)
+
+#7
+data.close()

@@ -1,4 +1,4 @@
-const coharts = require('./db.json')
+const coharts = require('./index.js')
 let globalId = 28
 
 module.exports = {
