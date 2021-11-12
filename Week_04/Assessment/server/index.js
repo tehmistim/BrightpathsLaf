@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // When we want to be able to accept JSON.
 
-let globalID = 20
+// let globalID = 20
 
 
 // function myFortune() {

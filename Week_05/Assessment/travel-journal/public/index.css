@@ -1,0 +1,50 @@
+* {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: teal;
+    color: white;
+}
+
+h1 {
+    padding: 20px;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.radio {
+    display: flex;
+}
+
+.country-card {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.country-card > h2 {
+    margin-bottom: 10px;
+}
+
+.country-card > button {
+    margin-top: 10px;
+    padding: 2px 10px;
+}

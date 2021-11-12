@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Module 5 Assessment | Devmountain Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/devmountain.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/devmountain.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Devmountain Foundations</p>
+            <p id="page-title">Module 5 Assessment</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Module 5 Assessment</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#part-1-data-manipulation-with-python">Part 1: Data Manipulation with Python</a><ul>
+<li><a class="reference internal" href="#directions">Directions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-2-data-modeling">Part 2: Data Modeling</a></li>
+<li><a class="reference internal" href="#part-3-sequelize">Part 3: Sequelize</a><ul>
+<li><a class="reference internal" href="#id1">Setup</a></li>
+<li><a class="reference internal" href="#step-1-dotenv">Step 1: Dotenv</a></li>
+<li><a class="reference internal" href="#step-2-sequelize">Step 2: Sequelize</a></li>
+<li><a class="reference internal" href="#step-3-seeding-the-database">Step 3: Seeding the Database</a></li>
+<li><a class="reference internal" href="#step-4-getting-countries">Step 4: Getting Countries</a></li>
+<li><a class="reference internal" href="#step-5-adding-entries">Step 5: Adding Entries</a></li>
+<li><a class="reference internal" href="#step-6-getting-cities">Step 6: Getting Cities</a></li>
+<li><a class="reference internal" href="#step-7-deleting-cities">Step 7: Deleting Cities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extra-credit">Extra Credit</a><ul>
+<li><a class="reference internal" href="#travel-journal">Travel Journal</a></li>
+<li><a class="reference internal" href="#data-with-python">Data with Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="module-5-assessment">
+<h1>Module 5 Assessment</h1>
+<section class="section" id="introduction">
+<h2>Introduction</h2>
+<p>It’s time to practice and solidify the skills you learned in this module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Independent work</p>
+<div class="admonition-body docutils container">
+<p>This is an individual assignment. Please do not collaborate with your
+peers or share your work until the project is reviewed as a class.</p>
+</div>
+</div>
+</section>
+<section class="section" id="setup">
+<h2>Setup</h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ed.devmountain.com/materials/exercises/assessment-data.zip">Click here</a> to
+download the code files you need to for this project.</p></li>
+<li><p>Navigate to the files on the command line.</p></li>
+</ol>
+</section>
+<section class="section" id="part-1-data-manipulation-with-python">
+<h2>Part 1: Data Manipulation with Python</h2>
+<p>Included in the materials for this project is a file called <cite>process.py</cite> and a file
+called <cite>um-server-01.txt</cite>. The <cite>process.py</cite> file is a file that opens and combs
+through the data that you see in <cite>um-server-01.txt</cite>.</p>
+<section class="section" id="directions">
+<h3>Directions</h3>
+<ul class="simple">
+<li><p>Read over the code in <cite>process.py</cite> file and <strong>add comments</strong> explaining what you
+think each line is doing. Recall that in Python, you can specify a comment using
+an octothorpe (<code class="docutils literal notranslate"><span class="pre">#</span></code>).</p></li>
+<li><p>Change the script to display sales info for Monday instead of Tuesday.</p></li>
+</ul>
+<p><strong>Once you have made your comments and edits to the script, run it to make sure
+it works. Then, make sure to add and commit your changes using Git.</strong></p>
+</section>
+</section>
+<section class="section" id="part-2-data-modeling">
+<h2>Part 2: Data Modeling</h2>
+<p>Imagine you are opening a pet adoption agency where you will rescue and care for
+animals and try to find them owners who are a good match for them.</p>
+<p>Design a database with at least 4 tables for your pet adoption agency.
+Include any relationships between tables where you feel they are
+needed.</p>
+<p>For example, you’ll need an animals table. Perhaps you have an animal
+species table as well. The relationship between animal species and animals
+is one-to-many. For every one species in the species table, you could, at most,
+have many animals of that species in the animals table.</p>
+<p><strong>Submit a diagram of your database for this project.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Drawing Tools</p>
+<div class="admonition-body docutils container">
+<p>You can use <cite>https://www.dbdesigner.net/</cite>
+(or <cite>https://draw.io</cite> or <cite>https://drawings.google.com/</cite>) to
+create your diagram. Make sure you specify your relationships between
+tables in your diagram. When you’re finished with your drawing, either
+take a screenshot or download a PDF of you diagram, add it to this
+repository, and push it to Github.</p>
+</div>
+</div>
+</section>
+<section class="section" id="part-3-sequelize">
+<h2>Part 3: Sequelize</h2>
+<p>For this portion, you’ll be connecting a front end to a database through a server and making queries using Sequelize.</p>
+<p>The front end of the app is simple – there is a form where you can add the name of a city, the country it’s in, and your rating of that city. All of the cities that you add will show up on the page as well.</p>
+<section class="section" id="id1">
+<h3>Setup</h3>
+<ol class="arabic simple">
+<li><p>Navigate into the <code class="docutils literal notranslate"><span class="pre">travel-journal</span></code> folder in your terminal.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> to get the project’s dependencies installed.</p></li>
+</ol>
+</section>
+<section class="section" id="step-1-dotenv">
+<h3>Step 1: Dotenv</h3>
+<p>For our server files to work, we’re going to need <cite>dotenv</cite>.</p>
+<ol class="arabic simple">
+<li><p>Install ‘dotenv’ using <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">dotenv</span></code></p></li>
+<li><p>Create a file at the root of your project called <code class="docutils literal notranslate"><span class="pre">.env</span></code></p></li>
+<li><p>In that file, create a <code class="docutils literal notranslate"><span class="pre">SERVER_PORT</span></code> variable and set it to <strong>4004</strong> (it needs to be this number or the front end won’t work)</p></li>
+<li><p>Additionally, create a <code class="docutils literal notranslate"><span class="pre">CONNECTION_STRING</span></code> variable and set it to your <cite>URI</cite> from Heroku (you can use the database from your lab earlier this unit or create another)</p></li>
+<li><p>At the top of <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, require in the <code class="docutils literal notranslate"><span class="pre">dotenv</span></code> package and call the <code class="docutils literal notranslate"><span class="pre">config</span></code> method (you can ignore the other code in there until later steps)</p></li>
+<li><p>Optional: destructure <code class="docutils literal notranslate"><span class="pre">CONNECTION_STRING</span></code> from <code class="docutils literal notranslate"><span class="pre">process.env</span></code> in <code class="docutils literal notranslate"><span class="pre">controller.js</span></code></p></li>
+</ol>
+</section>
+<section class="section" id="step-2-sequelize">
+<h3>Step 2: Sequelize</h3>
+<p>In order to make queries to our database, we’ll need Sequelize.</p>
+<ol class="arabic simple">
+<li><p>Install Sequelize and its dependencies using <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">sequelize</span> <span class="pre">pg</span> <span class="pre">pg-hstore</span></code></p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, require the <code class="docutils literal notranslate"><span class="pre">sequelize</span></code> package and save it to a variable called <cite>Sequelize</cite> (we’ll be working with the <code class="docutils literal notranslate"><span class="pre">seed</span></code> function in the next step, don’t edit it yet)</p></li>
+<li><p>Initialize a new Sequelize instance, passing in your connection string and an object that looks like this:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nx">dialect</span><span class="o">:</span> <span class="s1">&#39;postgres&#39;</span><span class="p">,</span>
+  <span class="nx">dialectOptions</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">ssl</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">rejectUnauthorized</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="step-3-seeding-the-database">
+<h3>Step 3: Seeding the Database</h3>
+<p>Let’s take a look at the <code class="docutils literal notranslate"><span class="pre">seed</span></code> function. Near the top of the query, you’ll see a line that says <code class="docutils literal notranslate"><span class="pre">*****YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE*****</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Delete <code class="docutils literal notranslate"><span class="pre">*****YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE*****</span></code> and replace it with a SQL query.</p></li>
+<li><p>Your query should create a table called <code class="docutils literal notranslate"><span class="pre">cities</span></code> that has 4 columns (<strong>Make sure you use these exact names so the front end works</strong>): <code class="docutils literal notranslate"><span class="pre">city_id</span></code>: serial, primary key; <code class="docutils literal notranslate"><span class="pre">name</span></code>: varchar; <code class="docutils literal notranslate"><span class="pre">rating</span></code>: integer; <code class="docutils literal notranslate"><span class="pre">country_id</span></code>: integer that should match a <code class="docutils literal notranslate"><span class="pre">country_id</span></code> from the <code class="docutils literal notranslate"><span class="pre">countries</span></code> table.</p></li>
+<li><p>Start up your backend with <code class="docutils literal notranslate"><span class="pre">nodemon</span></code> (make sure you’re in the right directory, also you can keep it running for the duration of the lab)</p></li>
+<li><p>Open Postman and make a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to <cite>http://localhost:4004/seed</cite>.</p></li>
+<li><p>Your database should now be seeded!</p></li>
+</ol>
+</section>
+<section class="section" id="step-4-getting-countries">
+<h3>Step 4: Getting Countries</h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">seed</span></code> function, a list of countries was added into your database. The front end needs that list so it can populate a <code class="docutils literal notranslate"><span class="pre">select</span></code> element with options for the user.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>’s export object, write a new function called <code class="docutils literal notranslate"><span class="pre">getCountries</span></code> (make sure it accepts <code class="docutils literal notranslate"><span class="pre">req</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">res</span></code>)</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database for all the columns from the <code class="docutils literal notranslate"><span class="pre">countries</span></code> table.</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 15 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.get('/countries',</span> <span class="pre">getCountries)</span></code>)</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> (public folder) in your browser</p></li>
+<li><p>You should be seeing a list of countries in the dropdown selector in the form! (If that’s working, there will still be 2 errors in the console – <code class="docutils literal notranslate"><span class="pre">GET</span></code> and a 404 – they will get fixed shortly)</p></li>
+</ol>
+</section>
+<section class="section" id="step-5-adding-entries">
+<h3>Step 5: Adding Entries</h3>
+<p>Now you’ll write the function that will let you add cities to the database.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, write a new function called <code class="docutils literal notranslate"><span class="pre">createCity</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database to insert some data into your table. A <code class="docutils literal notranslate"><span class="pre">name</span></code>, a <code class="docutils literal notranslate"><span class="pre">rating</span></code>, and a <code class="docutils literal notranslate"><span class="pre">countryId</span></code> will be sent on the <code class="docutils literal notranslate"><span class="pre">req.body</span></code>. Write an <code class="docutils literal notranslate"><span class="pre">insert</span></code> statement that adds those into the database. (Remember to use a template string for this, and feel free to destructure the values from <code class="docutils literal notranslate"><span class="pre">req.body</span></code> if you’d like).</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 18 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.post('/cities',</span> <span class="pre">createCity)</span></code>)</p></li>
+<li><p>You should now be able to add cities in the browser! You can confirm this by using the form and then <code class="docutils literal notranslate"><span class="pre">selecting</span></code> from your DB in SQL Tabs. However, they won’t be showing up in the browser yet, which is where the next step comes in.</p></li>
+</ol>
+</section>
+<section class="section" id="step-6-getting-cities">
+<h3>Step 6: Getting Cities</h3>
+<p>You’re doing great!</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, write a new function called <code class="docutils literal notranslate"><span class="pre">getCities</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database for columns from both the <code class="docutils literal notranslate"><span class="pre">cities</span></code> and <code class="docutils literal notranslate"><span class="pre">countries</span></code> tables. <strong>cities</strong>: city_id, name (alias ‘city), rating. <strong>countries</strong>: country_id, name (alias ‘country’). Make sure to spellcheck the aliases as well as the column names. Join the tables where <code class="docutils literal notranslate"><span class="pre">country_id</span></code> is equal.</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 19 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.get('/cities',</span> <span class="pre">getCities)</span></code>)</p></li>
+<li><p>You should see your entries now in the browser!</p></li>
+</ol>
+</section>
+<section class="section" id="step-7-deleting-cities">
+<h3>Step 7: Deleting Cities</h3>
+<p>Last, let’s add the ability to delete a city from our list.</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">controller.js</span></code>, write a new function called <code class="docutils literal notranslate"><span class="pre">getCities</span></code></p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">sequelize.query</span></code> query your database to delete a city. An <code class="docutils literal notranslate"><span class="pre">id</span></code> will be sent on <code class="docutils literal notranslate"><span class="pre">req.params</span></code>. That will be the <code class="docutils literal notranslate"><span class="pre">city_id</span></code> of the city that you will delete from the <code class="docutils literal notranslate"><span class="pre">cities</span></code> table. (Remember to use a template string for this, and feel free to destructure the values from <code class="docutils literal notranslate"><span class="pre">req.params</span></code> if you’d like).</p></li>
+<li><p>Handle the promise with <code class="docutils literal notranslate"><span class="pre">.then()</span></code> passing in a callback: <code class="docutils literal notranslate"><span class="pre">dbRes</span> <span class="pre">=&gt;</span> <span class="pre">res.status(200).send(dbRes[0])</span></code> (you can also add a <code class="docutils literal notranslate"><span class="pre">.catch</span></code>)</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, comment line 20 back in (this line: <code class="docutils literal notranslate"><span class="pre">app.delete('/cities/:id',</span> <span class="pre">deleteCity)</span></code>)</p></li>
+<li><p>Now you can delete cities!</p></li>
+</ol>
+</section>
+</section>
+<section class="section" id="extra-credit">
+<h2>Extra Credit</h2>
+<section class="section" id="travel-journal">
+<h3>Travel Journal</h3>
+<ol class="arabic simple">
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">getCities</span></code> function to get the cities back with the highest rated cities at the top down to lowest rated cities at the bottom.</p></li>
+<li><p>Update your <code class="docutils literal notranslate"><span class="pre">seed</span></code> function to initially insert at least 3 entries to the city table.</p></li>
+</ol>
+</section>
+<section class="section" id="data-with-python">
+<h3>Data with Python</h3>
+<ol class="arabic simple">
+<li><p>In <cite>process.py</cite>, write another function that prints out all the melon orders that delivered over 10 melons.</p></li>
+</ol>
+<p><strong>Be sure to push your code to GitHub for this assignment and turn your link in on Frodo!</strong></p>
+</section>
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
