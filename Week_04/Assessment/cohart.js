@@ -1,4 +1,4 @@
-const cohartSection = document.querySelector('#cohart-section')
+const cohartSection = document.querySelector('box')
 const form = document.querySelector('form')
 
 const baseURL = "http://localhost:4000/api/coharts"

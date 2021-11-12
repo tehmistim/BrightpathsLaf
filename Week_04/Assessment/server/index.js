@@ -3,10 +3,10 @@ const cors = require("cors");
 
 const app = express();
 
-const {getCoharts, deleteCohart, createCohart, updateCohart} = require('./controller.js')
-
 app.use(cors());
 app.use(express.json()); // When we want to be able to accept JSON.
+
+let globalID = 20
 
 
 // function myFortune() {
@@ -104,11 +104,22 @@ app.get("/api/coharts", (req, res) => {
     res.status(200).send(data);
 });
 
-// app.get("/api/people": (req, res) => {
-// 	let data = ['Logan', 'Celena', 'Natalie', 'Carter']
+app.delete(`/api/coharts/:id`, (req, res) => {
+	let index = charts.findIndex(elem => elem.id === +req.params.id)
+	coharts.splice(index, 1)
+	res.status(200).send(coharts)
+});
 
-// 	res.status(200).send(data);
-
-// });
+app.post(`/api/coharts`,(req, res) => {
+	let { title, rating, imageURL } = req.body
+	let newCohart = {
+		id: globalId,
+			name,
+			squad,
+			imageURL
+	}
+	coharts.push(newCohart)
+	res.status(200).send(cohart)
+});
 
 app.listen(4000, () => console.log("Server running on 4000"));
