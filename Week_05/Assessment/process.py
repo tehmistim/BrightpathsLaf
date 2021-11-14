@@ -1,3 +1,5 @@
+# PART ONE
+
 # log_file = open("um-server-01.txt")     #<-- is opening the text file in python for data to be accessed
 
 
@@ -11,7 +13,7 @@
 
 # sales_reports(log_file)                 #<-- runs sales_reports function to give us only "Tue" data
 
-#------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------PART TWO--------------------------------------------------------------------------
 
 log_file = open("um-server-01.txt")     
 
@@ -25,3 +27,14 @@ def sales_reports(log_file):
 
 
 sales_reports(log_file)                 
+
+
+#----------------------------------------------------------------------------
+def qty_sales_reports(log_file):
+    for line in log_file:
+        split_line = line.split(' ')
+        qty = int(split_line[2])
+        if qty > 10:
+            print(line)
+
+qty_sales_reports(log_file)
