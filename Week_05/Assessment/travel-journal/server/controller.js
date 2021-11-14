@@ -42,7 +42,8 @@ module.exports = {
             SELECT city.city_id, city.name AS city, city.rating, country.country_id, country.name AS country
             FROM cities city
             JOIN countries country
-            on city.country_id = country.country_id;
+            on city.country_id = country.country_id
+            ORDER BY city.rating desc;
         `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err));
@@ -72,7 +73,13 @@ module.exports = {
                 name varchar,
                 rating integer,
                 country_id serial
-            );    
+            );   
+            
+            insert into cities (name, rating, country_id)
+            values ('Lafayette', 4, 18),
+            ('Baton Rouge', 5, 30),
+            ('New Orleans', 4, 20),
+            ('Shreveport', 3, 10);
 
             insert into countries (name)
             values ('Afghanistan'),
