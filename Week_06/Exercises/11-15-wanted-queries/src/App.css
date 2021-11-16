@@ -1,0 +1,150 @@
+html {
+  height: 100%
+}
+
+body {
+  height: 100%
+}
+
+#outerContainer {
+  position: absolute;
+}
+
+#offset {
+  margin-left: 20px;
+}
+
+.App {
+  text-align: left;
+}
+
+.inputs{
+  min-width: 300px;
+  width: 40%;
+  padding-left: 20px;
+}
+
+.results{
+  padding-top: 20px;
+  vertical-align: top
+}
+
+.inputField {
+  margin-left: 5px;
+  width: 75%;
+  border: 1px solid #AEAEAE;
+  border-radius: 2px;
+}
+
+.required {
+  border: 2px solid #9D9D9D;
+  box-shadow: 0 0 4px #6999FF;
+}
+
+.error {
+  border: 2px solid #9D9D9D;
+  box-shadow: 0 0 4px #FF6969;
+}
+
+.fieldHeader {
+  color: #333333;
+  font-weight: 450  
+}
+
+.button {
+  font-size:1em;
+  font-weight: 700
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.menu-item{
+  color: white;
+  text-decoration: none;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.titleBar {
+  position: absolute;
+  top: 13px;
+  left: 86px;
+}
+
+#pageWrap {
+  padding-top: 75px
+}
+
+#welcomeScreen {
+  padding-top: 30px;
+  padding-left: 15px;
+}
