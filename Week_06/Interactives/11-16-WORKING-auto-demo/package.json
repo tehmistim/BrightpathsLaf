@@ -1,0 +1,31 @@
+{
+  "name": "qa_playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusbass323/auto-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcusbass323/auto-demo/issues"
+  },
+  "homepage": "https://github.com/marcusbass323/auto-demo#readme",
+  "dependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/selenium-webdriver": "^4.0.16",
+    "chromedriver": "^96.0.0",
+    "geckodriver": "^2.0.4",
+    "jest": "^27.3.1",
+    "selenium-webdriver": "^4.0.0",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
