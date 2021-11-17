@@ -14,10 +14,12 @@
         "@types/selenium-webdriver": "^4.0.12",
         "chromedriver": "^95.0.0",
         "geckodriver": "^2.0.4",
-        "jest": "^27.0.7",
         "selenium-webdriver": "^4.0.0-beta.3",
         "ts-jest": "^27.0.7",
         "ts-node": "^10.4.0",
         "typescript": "^4.0.5"
+    },
+    "devDependencies": {
+        "jest": "^27.3.1"
     }
 }
