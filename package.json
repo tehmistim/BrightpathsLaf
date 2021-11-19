@@ -3,7 +3,8 @@
     "axios": "^0.24.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "i": "^0.3.7"
+    "i": "^0.3.7",
+    "rollbar": "^2.24.0"
   },
   "name": "brightpathslaf",
   "description": "Repo Directory structure AS OF 10-25-2021\r Week 1 and 2 are randomly scattered in github under activity titles",
