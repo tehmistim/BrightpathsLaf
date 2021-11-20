@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Module 6 Assessment | Devmountain Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/devmountain.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/devmountain.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Devmountain Foundations</p>
+            <p id="page-title">Module 6 Assessment</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Module 6 Assessment</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#part-1-server-setup">Part 1: Server Setup</a></li>
+<li><a class="reference internal" href="#part-2-manual-testing">Part 2: Manual Testing</a></li>
+<li><a class="reference internal" href="#part-3-unit-tests">Part 3: Unit Tests</a></li>
+<li><a class="reference internal" href="#part-4-write-automated-tests">Part 4: Write Automated Tests</a></li>
+<li><a class="reference internal" href="#part-5-rollbar">Part 5: Rollbar</a></li>
+<li><a class="reference internal" href="#part-6-deployment">Part 6: Deployment</a></li>
+<li><a class="reference internal" href="#extra-credit-deployment-sketch">Extra Credit: Deployment Sketch</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="module-6-assessment">
+<h1>Module 6 Assessment</h1>
+<section class="section" id="introduction">
+<h2>Introduction</h2>
+<p>It’s time to practice and solidify the skills you learned in this module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Independent work</p>
+<div class="admonition-body docutils container">
+<p>This is an individual assignment. Please do not collaborate with your
+peers or share your work until the project is reviewed as a class.</p>
+</div>
+</div>
+</section>
+<section class="section" id="setup">
+<h2>Setup</h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ed.devmountain.com/materials/exercises/assessment-qa-devops.zip">Click here</a> to
+download the code you need to for this project.</p></li>
+<li><p>Navigate to the folder you just downloaded on the command line.</p></li>
+<li><p>Get dependencies installed by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>.</p></li>
+</ol>
+</section>
+<section class="section" id="part-1-server-setup">
+<h2>Part 1: Server Setup</h2>
+<p>Start with setting up your server to serve static files so that it will be ready for deployment.</p>
+<ul class="simple">
+<li><p>Near the top of <code class="docutils literal notranslate"><span class="pre">server.js</span></code>, set up middleware and/or endpoints that will serve the files from the <code class="docutils literal notranslate"><span class="pre">public</span></code> folder.</p></li>
+<li><p>Don’t forget the CSS and JS files, you can see the endpoints they’re requesting in <code class="docutils literal notranslate"><span class="pre">public/index.html</span></code>.</p></li>
+<li><p>Start the app by running <code class="docutils literal notranslate"><span class="pre">nodemon</span></code>.</p></li>
+<li><dl class="simple">
+<dt>Visit <code class="docutils literal notranslate"><span class="pre">http://localhost:3000</span></code> your web browser and play a few games of Duel Duo.</dt><dd><p>Familiarize yourself with how the interface works. The idea is that the player’s Duo and
+the computer’s Duo will duel each other. You don’t know the computer’s Duo beforehand.
+The winner is calculated by adding each Duo’s total health and total attack damage up
+and then subtracting all of the opposition’s attack from the defender’s health.
+(Reloading the page will reset your wins and losses.)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Open and read <cite>public/index.js</cite>. While it’s not important to</dt><dd><p>understand every line of how the JavaScript code is working in this project,
+take note of the different functions and what they appear to do to make the app
+work. Also, explore more of your server so you know what’s going on there too.</p>
+</dd>
+</dl>
+</li>
+<li><p>Remember, you can kill the nodemon process by pressing <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code></p></li>
+</ul>
+</section>
+<section class="section" id="part-2-manual-testing">
+<h2>Part 2: Manual Testing</h2>
+<p>There are at least 3 known bugs in this game. Draft a plan to test
+the game, conduct your testing, and document any bugs that you find. Keep track
+of your testing documentation (plan, cases, and bugs) in a Google doc, Trello,
+or something similar.</p>
+<p>Make sure you play enough times to lose at least once and win at least once.</p>
+<p>You need to write at least 1 test case, 1 bug report, and 1 other piece of
+documentation (a test plan, another case, or another bug report).</p>
+<p><strong>When you have finished this section, download your document as a PDF/png,
+and save it to your project folder.</strong></p>
+</section>
+<section class="section" id="part-3-unit-tests">
+<h2>Part 3: Unit Tests</h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">functions.test.ts</span></code> file, there is a describe block waiting for tests!</p>
+<p>Write <strong>at least 2</strong> tests in the describe callback for the <code class="docutils literal notranslate"><span class="pre">shuffleArray</span></code> function.
+You may need to read through Jest documentation to find methods/matchers to use.</p>
+<p>Some ideas:</p>
+<ul class="simple">
+<li><p>check that <code class="docutils literal notranslate"><span class="pre">shuffleArray</span></code> returns an array</p></li>
+<li><p>check that it returns an array of the same length as the argument sent in</p></li>
+<li><p>check that all the same items are in the array</p></li>
+<li><p>check that the items have been shuffled around</p></li>
+</ul>
+<p>Once you’re done, make sure your server is running with <code class="docutils literal notranslate"><span class="pre">nodemon</span></code>.</p>
+<p>Next, in a <strong>new terminal window</strong> while your server is still running,
+run the tests with <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">test</span></code>. You should see <cite>1 passed</cite> in green
+when this command runs.</p>
+</section>
+<section class="section" id="part-4-write-automated-tests">
+<h2>Part 4: Write Automated Tests</h2>
+<p>Open and read the file called <cite>duelDuo.test.ts</cite>. There is one automated test
+included already.</p>
+<p>Write at least 2 more tests for the game. Here are some
+ideas for tests:</p>
+<ul class="simple">
+<li><p>Check that clicking the Draw button displays the div with id = “choices”</p></li>
+<li><p>Check that clicking an “Add to Duo” button displays the div with id = “player-id”</p></li>
+<li><p>Check that when a bot is “Removed from Duo”, that it goes back to “choices”</p></li>
+</ul>
+<p><strong>Note</strong>: You may want to use the <code class="docutils literal notranslate"><span class="pre">sleep</span></code> function after clicking on an element to make sure
+the tests don’t get ahead of themselves.</p>
+<p>You can run these with <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">test</span></code> as well.</p>
+</section>
+<section class="section" id="part-5-rollbar">
+<h2>Part 5: Rollbar</h2>
+<p>Set up Rollbar in <code class="docutils literal notranslate"><span class="pre">server.js</span></code> so that you can log information and errors about your app.</p>
+<p>In the Rollbar app, create a new project to get your access token. Use that to connect your app
+to that project.</p>
+<p>In the endpoint handler functions, set up at least 4 rollbar events (not counting ‘Hello World’.)</p>
+</section>
+<section class="section" id="part-6-deployment">
+<h2>Part 6: Deployment</h2>
+<ul class="simple">
+<li><p>Set up your Procfile.</p></li>
+<li><p>Add and commit your code.</p></li>
+<li><p>Set up a repo in GitHub.</p></li>
+<li><p>Connect your remote repo and push your code.</p></li>
+<li><p>In Heroku, set up a new app that deploys from your repo.</p></li>
+<li><p>Include the link to your Heroku site in the <code class="docutils literal notranslate"><span class="pre">heroku.md</span></code> file.</p></li>
+<li><p>Interact with your live site and check Rollbar for logs!</p></li>
+</ul>
+</section>
+<section class="section" id="extra-credit-deployment-sketch">
+<h2>Extra Credit: Deployment Sketch</h2>
+<p>Draw a sketch/picture of deployment as it relates to the broader web application
+development process. Be sure to include GitHub, your local development
+environment, and the different parts of the web application on the sketch.</p>
+<p>You should be able to come back to this picture in the future if you need
+a refresher on what deployment is and how to think about it in the broader
+picture of web application development.</p>
+<p><strong>Be sure to push your code to GitHub for this assessment!</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>To pass this assessment you must score at least 17/24.</strong></p>
+<img alt="_images/Unit6Rubric.png" src="_images/Unit6Rubric.png" style="width: 1100px;" />
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duel Duo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles">
+</head>
+<body>
+    <h1 id="title">Duel Duo</h1>
+    <p>Click the Draw button to draw 5 random bot cards and then choose 2 to be your Duel Duo!</p>
+    <p>Once you have your Duel Duo, click the Duel button to fight a computer Duo!</p>
+
+    <button id="see-all">See All Bots</button>
+    <div id="all-bots"></div>
+
+    <hr/>
+
+    <h2 id="wins"></h2>
+    <h2 id="losses"></h2>
+
+    <hr/>
+
+    <button id="draw">Draw</button>
+
+    <section>
+        <h2 id="choose-header">Choose 2!</h2>
+        <div id="choices" class="container"></div>
+    </section>
+
+    <h2 id="results"></h2>
+    <button id="play-again">Play again!</button>
+
+    <section class="container">
+        <section>
+            <h2 id="your-duo-header">Your Duo</h2>
+            <div id="player-duo" class="container"></div>
+        </section>
+        <section>
+            <h2 id="comp-duo-header">Computer Duo</h2>
+            <div id="comp-duo" class="container"></div>
+        </section>
+    </section>
+    
+    <button id="duel">DUEL!</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js"></script>
+</body>
+</html>
