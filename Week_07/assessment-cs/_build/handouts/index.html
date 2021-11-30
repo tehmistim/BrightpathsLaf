@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Module 7 Project | Bright Paths - Foundations</title>
+
+    <link
+      href="_static/pygments.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="_static/brightpaths.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+    <script src="_static/pdfobject.min.js"></script>
+  </head>
+  <body>
+    <div id="handouts-container">
+      <header id="page-header">
+        <p id="project-title">Bright Paths - Foundations</p>
+        <p id="page-title">Module 7 Project</p>
+        <p id="backlink">
+          <a href="/"> &laquo; Back to Homepage </a>
+        </p>
+      </header>
+
+      <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Module 7 Project</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#step-1-runtime-analysis">Step 1: Runtime Analysis</a></li>
+<li><a class="reference internal" href="#step-2-write-code">Step 2: Write Code</a><ul>
+<li><a class="reference internal" href="#sum-zero">1) Sum Zero</a></li>
+<li><a class="reference internal" href="#unique-characters">2) Unique Characters</a></li>
+<li><a class="reference internal" href="#pangram-sentence">3) Pangram Sentence</a></li>
+<li><a class="reference internal" href="#longest-word">4) Longest Word</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extra-credit">Extra Credit</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+
+      <main id="page-content">  <section class="section" id="module-7-project">
+<h1>Module 7 Project</h1>
+<section class="section" id="introduction">
+<h2>Introduction</h2>
+<p>It’s time to practice and solidify the skills you learned in this module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Independent work</p>
+<div class="admonition-body docutils container">
+<p>This is an individual assignment. Please do not collaborate with your
+peers or share your work until the project is reviewed as a class.</p>
+</div>
+</div>
+</section>
+<section class="section" id="setup">
+<h2>Setup</h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ed.devmountain.com/materials/skills/cs.zip">Click here</a> to
+download the code files you need to for this project.</p></li>
+<li><p>Navigate to the files on the command line.</p></li>
+<li><p>Setup the your project by running <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>.</p></li>
+</ol>
+</section>
+<section class="section" id="step-1-runtime-analysis">
+<h2>Step 1: Runtime Analysis</h2>
+<p>In the materials you downloaded at the beginning, there is a file called <cite>runtime.js</cite>.
+Read the code in this file carefully. After you have read over the file yourself
+and made some guesses on what’s happening, hover below to read a summary.</p>
+<div class="admonition hint">
+<p class="admonition-title"><cite>runtime.js</cite> Summary</p>
+<details class="admonition-body"><summary></summary><div class="admonition-body docutils container">
+<p>At the top of the file, there are two functions, <cite>doublerAppend</cite> and
+<cite>doublerInsert</cite> that seem to do a similar thing– take in an array of numbers,
+multiple each number by two, and then add it to a new array.</p>
+<p>However, the functions are in fact vastly different. One uses <cite>.push()</cite>
+to add the numbers to a new array, and the other uses <cite>.unshift()</cite> to
+add the numbers to a new array. If you haven’t already, stop and
+do a Google search for <cite>.unshift()</cite> to learn about what it does in Javascript.</p>
+<p>After the functions, you’ll see several arrays being created using another function
+in the file, <cite>getSizedArray</cite>. This is a “helper function” for this assignment.</p>
+<p>Lastly, you’ll see code that is starting and stopping a timer near the end of the file.
+This happens twice– once to call the first function, and another time to call the second
+function. The results of those timers are printed to the console.</p>
+</div>
+</details></div>
+<ol class="arabic simple">
+<li><p>It’s time to run the file! Run the command <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">runtime.js</span></code> in the same
+directory as where the file lives.</p></li>
+<li><p>In your notes document, take note of the timing result for the <cite>extraLargeArray</cite>
+results– comparing when the <cite>extraLargeArray</cite> is passed to <cite>doublerAppend</cite> and
+<cite>doublerInsert</cite>.</p></li>
+<li><p>Next, edit the code in <cite>runtime.js</cite> to obtain timing results for calling the
+two functions with all of the differently sized arrays– <cite>tinyArray</cite>,
+<cite>smallArray</cite>, <cite>mediumArray</cite>, <cite>largeArray</cite>, and <cite>extraLargeArray</cite>. Notate
+these in your document in some kind table table so that you can easily
+compare the different values for the timers in relation to the size
+of the array that was passed into each function.</p></li>
+<li><p>Read over the results, and write a paragraph that explains the pattern you
+see. How does each function “scale”? Which of the two functions scales better?
+How can you tell?</p></li>
+<li><p>For extra credit, do some review / research on why the slower function is so
+slow, and summarize the reasoning for this.</p></li>
+</ol>
+<p><strong>Be sure to include this report in the Github repo for this project.</strong></p>
+</section>
+<section class="section" id="step-2-write-code">
+<h2>Step 2: Write Code</h2>
+<p>Work through the following problems in Javascript (you have seen these problems before).
+Create a new file for your code. When you have finished with each function,
+leave a code comment with what you believe the runtime of your code to be.</p>
+<section class="section" id="sum-zero">
+<h3>1) Sum Zero</h3>
+<p>Write a function that takes in an array of numbers. The function should
+return True if any two numberss in list sum to 0, and false otherwise.</p>
+<p>For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">addToZero</span><span class="p">([]);</span>
+<span class="c1">// -&gt; False</span>
+
+<span class="nx">addToZero</span><span class="p">([</span><span class="mf">1</span><span class="p">]);</span>
+<span class="c1">// -&gt; False</span>
+
+<span class="nx">addToZero</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">]);</span>
+<span class="c1">// -&gt; False</span>
+
+<span class="nx">addToZero</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2</span><span class="p">]);</span>
+<span class="c1">// -&gt; True</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="unique-characters">
+<h3>2) Unique Characters</h3>
+<p>Write a function that takes in a single word, as a string. It should
+return True if that word contains only unique characters. Return False
+otherwise.</p>
+<p>For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">hasUniqueChars</span><span class="p">(</span><span class="s2">&quot;Monday&quot;</span><span class="p">);</span>
+<span class="c1">// -&gt; True</span>
+
+<span class="nx">hasUniqueChars</span><span class="p">(</span><span class="s2">&quot;Moonday&quot;</span><span class="p">);</span>
+<span class="c1">// -&gt; False</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="pangram-sentence">
+<h3>3) Pangram Sentence</h3>
+<p>A pangram is a sentence that contains all the letters of the English
+alphabet at least once, like “The quick brown fox jumps over the lazy dog.”</p>
+<p>Write a function to check a sentence to see if it is a pangram or not.</p>
+<p>For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">isPangram</span><span class="p">(</span><span class="s2">&quot;The quick brown fox jumps over the lazy dog!&quot;</span><span class="p">);</span>
+<span class="c1">// -&gt; True</span>
+
+<span class="nx">isPangram</span><span class="p">(</span><span class="s2">&quot;I like cats, but not mice&quot;</span><span class="p">);</span>
+<span class="c1">// -&gt; False</span>
+</pre></div>
+</div>
+</section>
+<section class="section" id="longest-word">
+<h3>4) Longest Word</h3>
+<p>Write a function, find_longest_word, that takes a list of words and
+returns the length of the longest one.</p>
+<p>For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">findLongestWord</span><span class="p">([</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">]);</span>
+<span class="c1">// -&gt; 5</span>
+</pre></div>
+</div>
+<p><strong>Be sure to add this file to your Github repo for this project.</strong></p>
+</section>
+</section>
+<section class="section" id="extra-credit">
+<h2>Extra Credit</h2>
+<p>List out the space complexity of each solution in Step 2.</p>
+</section>
+</section>
+ 
+      </main>
+
+      <footer id="page-footer">
+        <p>&copy; 2021 Devmountain</p>
+      </footer>
+    </div>
+
+    <script src="_static/main.js"></script>
+      <script src="_static/jquery.js"></script>
+      <script src="_static/underscore.js"></script>
+      <script src="_static/doctools.js"></script>
+  </body>
+</html>

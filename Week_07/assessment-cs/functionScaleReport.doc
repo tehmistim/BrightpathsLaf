@@ -1,0 +1,9 @@
+The quicker process in regards to time and space complexity is when you use .push over .unshift. The append push() method was much much quicker than the insert function for the extraLargeArray that was assigned to (100000). There is an extra item from the beginning of the array then has to increment all the elements that are in the array and it takes much longer than the append, push() method which inserts elements at the end of the array. 
+
+Push () method is a constant time O(1) and unshift() method is linear time O(n). The push method does not cause a shift in the index, it only adds a new index for the new item at the end of the array. Because push() method is on a constant time, it always takes a fixed number of steps, no matter how large the input the size increases.
+
+The unshift() method add items from the beginning of the array. It causes an index shift for all other elements in the array. It runs on linear time because it is directly related to the size of our input and going through each item within the array. The larger the input, the greater the amount of time it takes to perform the function. 
+
+Why some functions are slower than others? It is because of their algorithm(s). Which big O run time they fall under determines the time complexity of each process. This is why it is important to use efficient algorithm so we save on time and money. The major runtimes are: Constant time(O(1)), Logarithmic time(O(n log n)), Linear time(O(n)), Quadratic time(O(n^2)), Exponential time(O(2^n)) and Factorial time()(n!). Depending on what time the function code falls under and how many steps it takes to execute will determine it's runtime. Something as complex as a Factorial runtime or Exponential Runtime will not be as quick as a Constant runtime where no matter how large the input is, the step does not change. 
+
+I needed a ton of help with this and DISLIKE THIS GREATLY!!!

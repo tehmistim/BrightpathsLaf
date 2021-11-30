@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Time Words | Bright Paths - Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/brightpaths.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/brightpaths.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Bright Paths - Foundations</p>
+            <p id="page-title">Time Words</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Time Words</a></li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="time-words">
+<h1>Time Words</h1>
+<dl class="field-list simple">
+<dt class="field-odd">Difficulty</dt>
+<dd class="field-odd"><p>Medium</p>
+</dd>
+<dt class="field-even">Concepts</dt>
+<dd class="field-even"><p>General</p>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Write a function that turns a string of 24-hour time into words.</p>
+<p>You can trust that you’ll be given a valid string (it will always have a two-digit hour 00-23, and a two-digit minute 00-59). Hours 0-11 are am, and hours 12-23 are pm.</p>
+<p>Handle noon and midnight specially:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;00:00&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;midnight&#39;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;12:00&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;noon&#39;</span>
+</pre></div>
+</div>
+<p>Otherwise, covert times to text:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;01:00&quot;</span><span class="p">)</span>
+<span class="c1">// &quot;one o&#39;clock am&quot;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;06:01&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;six oh one am&#39;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;06:10&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;six ten am&#39;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;06:18&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;six eighteen am&#39;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;06:30&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;six thirty am&#39;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;10:34&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;ten thirty four am&#39;</span>
+</pre></div>
+</div>
+<p>Don’t forget to handle early morning properly:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;00:12&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;twelve twelve am&#39;</span>
+</pre></div>
+</div>
+<p>For times after noon, add ‘pm’:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;12:09&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;twelve oh nine pm&#39;</span>
+
+<span class="nx">timeWord</span><span class="p">(</span><span class="s2">&quot;23:23&quot;</span><span class="p">)</span>
+<span class="c1">// &#39;eleven twenty three pm&#39;</span>
+</pre></div>
+</div>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
